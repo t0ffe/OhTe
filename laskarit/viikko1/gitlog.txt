@@ -1,3 +1,5 @@
+"editoi siis esim. tiedostoa gitlog.txt hieman suoraan GitHubissa"
+
 commit e93148a77ffdae290d0766a9f6e9c260cd004420
 Author: t0f <toffelaakso@gmail.com>
 Date:   Wed Mar 15 23:14:18 2023 +0200
