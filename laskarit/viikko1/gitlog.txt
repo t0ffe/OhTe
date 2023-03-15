@@ -1,0 +1,113 @@
+commit e93148a77ffdae290d0766a9f6e9c260cd004420
+Author: t0f <toffelaakso@gmail.com>
+Date:   Wed Mar 15 23:14:18 2023 +0200
+
+    file1 poistettu, file2 nimetty file22
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit fcf43cdd891a8e89e0817bfae6ae91e17ab33ae4
+Author: t0f <toffelaakso@gmail.com>
+Date:   Wed Mar 15 23:10:59 2023 +0200
+
+    file1, file2 ja file3 lisätty
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 6d2236df653f44a1d29fd976138a1e6a073c6248
+Author: t0f <toffelaakso@gmail.com>
+Date:   Wed Mar 15 23:05:37 2023 +0200
+
+    eka.txt ja kolmas.txt muutoksia
+
+ eka.txt    | 7 ++-----
+ kolmas.txt | 2 +-
+ 2 files changed, 3 insertions(+), 6 deletions(-)
+
+commit 104a6390a54a28d9ccf3204b36a72c4dfe785f1e
+Author: t0f <toffelaakso@gmail.com>
+Date:   Wed Mar 15 23:02:44 2023 +0200
+
+            renamed:    tiedosto.txt -> eka.txt
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit b7b56c5cb1546a2dd2cc21556cf6be1ca4c11959
+Author: t0f <toffelaakso@gmail.com>
+Date:   Wed Mar 15 23:01:32 2023 +0200
+
+    toinen.txt poisto
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 4938946383f496b861eb1a1db45498ebffd49dc2
+Author: t0f <toffelaakso@gmail.com>
+Date:   Wed Mar 15 22:58:59 2023 +0200
+
+    tiedosto.txt muutos
+
+ tiedosto.txt | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+commit 913cb5e35aebcb2c216cf557c6c3cbb62a5931ce
+Author: t0f <toffelaakso@gmail.com>
+Date:   Wed Mar 15 22:56:16 2023 +0200
+
+    tiedosto.txt lorem ipsum
+
+ tiedosto.txt | 12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
+
+commit 39931dc2816fdd5f9cdb3cf957d5e6855260fb4f
+Author: t0f <toffelaakso@gmail.com>
+Date:   Wed Mar 15 22:52:50 2023 +0200
+
+    stuff/ lisätty
+
+ stuff/jokin_teidosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 34a18b9fee367c0d8298cea812087d08ff446fef
+Author: t0f <toffelaakso@gmail.com>
+Date:   Wed Mar 15 22:51:38 2023 +0200
+
+    toinen.txt ja komlas.txt muokattu
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 4b774cde5077075fdb45ff5e20e2267f92380722
+Author: t0f <toffelaakso@gmail.com>
+Date:   Wed Mar 15 22:50:39 2023 +0200
+
+    kolmas.txt luotu
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit ecdc2678fb61cdab37e230de794fbccbc0b4f0f0
+Author: t0f <toffelaakso@gmail.com>
+Date:   Wed Mar 15 22:47:56 2023 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 66ee0c44eed2bf4797fddc38e21539bf7074ab5e
+Author: t0f <toffelaakso@gmail.com>
+Date:   Wed Mar 15 22:45:55 2023 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
