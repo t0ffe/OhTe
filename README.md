@@ -1,5 +1,5 @@
 
-# Ohjelmistotekniikka 2023, harjoitustyö
+# Ohjelmistotekniikka 2023, Harjoitustyö
 
 ## Tehtävät
 
