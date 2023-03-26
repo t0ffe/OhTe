@@ -11,4 +11,4 @@
 ### Viikko 2
 
 - [vaatimusmaarittely.md](dokumentaatio/vaatimusmaarittely.md)
-- [komentorivi.txt](laskarit/viikko1/komentorivi.txt)
+- [tuntikirjanpito.md](dokumentaatio/tuntikirjanpito.md)
