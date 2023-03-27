@@ -2,7 +2,7 @@
 
 ## Sovelluksen tarkoitus
 
-Sovellus on klooin pelistä tetris.
+Sovellus on klooni pelistä Tetris.
 
 ## Käyttöliittymäluonnos
 
@@ -20,20 +20,20 @@ Sovellus on klooin pelistä tetris.
 - Peli alkaa
 - Loppuu kun palikoiden pino ylittää ylärajan
     - Pelin lopuksi näet pisteet
-        - voit antaa nimierkin jolla kirjataan ylös tulostauluun pisteet
-    - Voit palata aloitus ruutuun tai aloittaa pelin alusta
+        - voit antaa nimimerkin, jolla kirjataan ylös tulostauluun pisteet
+    - Voit palata aloitusruutuun tai aloittaa pelin alusta
 
-### Tulostaulun valinnan 
+### Tulostaulun valinnan jälkeen
 
-- Näet tulostaululta top 5(?) parhaat pisteet ja niiden nimet
-- Voit palata aloitus ruutuun
+- Näet tulostaululta top 5(?) parhaat pisteet, ja niiden nimet
+- Voit palata aloitusruutuun
 
 
 ## Jatkokehitysideoita
 
 Perusversion jälkeen järjestelmää täydennetään ajan salliessa esim. seuraavilla toiminnallisuuksilla:
 
-- Tauko ominaisuus
+- Tauko-ominaisuus
 - Eri modifikaatioita peliin:
     - Pelikentän koko
     - uusia tetriminoja 
