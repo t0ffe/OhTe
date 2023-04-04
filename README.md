@@ -1,18 +1,30 @@
 
-# Ohjelmistotekniikka 2023, Harjoitustyö
+# OhTe-tris
 
-## Tehtävät
+Klooni tetris pelistä. Ohjelmistotekniikka 2023-kurssin harjoitustyö.
 
-### Viikko 1
 
-- [gitlog.txt](laskarit/viikko1/gitlog.txt)
-- [komentorivi.txt](laskarit/viikko1/komentorivi.txt)
+## Dokumentaatio
 
-### Viikko 2
+- [Vaatimusmaarittely](dokumentaatio/vaatimusmaarittely.md)
+- [Tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
+- [Changelog](dokumentaatio/changelog.md)
 
-- [vaatimusmaarittely.md](dokumentaatio/vaatimusmaarittely.md)
-- [tuntikirjanpito.md](dokumentaatio/tuntikirjanpito.md)
+## Komentorivitoiminnot
+### Pelin käynnistäminen
+Pelin pystyy käynnistämään komennolla:
 
-### Viikko 2
-
-- [changelog.md](dokumentaatio/changelog.md)
+```bash
+poetry run invoke start
+```
+### Testaus
+Testit suoritetaan komennolla:
+```bash
+poetry run invoke test
+```
+### Testikattavuus
+Testikattavuusraportin voi generoida komennolla:
+```bash
+poetry run invoke coverage-report
+```
+Testikattavuusraportin löytää _htmlcov_-hakemistosta.
