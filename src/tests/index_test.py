@@ -3,6 +3,7 @@ import pygame as pg
 from index import Game
 from tetris import Tetris
 
+
 class TestIndex(unittest.TestCase):
     def setUp(self):
         self.tetris_game_instance = Game()
@@ -13,7 +14,7 @@ class TestIndex(unittest.TestCase):
 
     def test_initialization(self):
         assert isinstance(self.tetris_game_instance, Game)
-        assert isinstance(self.tetris_game_instance.screen , pg.Surface)
-        assert isinstance(self.tetris_game_instance.clock , pg.time.Clock)
+        assert isinstance(self.tetris_game_instance.screen, pg.Surface)
+        assert isinstance(self.tetris_game_instance.clock, pg.time.Clock)
         assert isinstance(self.tetris_game_instance.tetris, Tetris)
         # assert grid size

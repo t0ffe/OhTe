@@ -2,6 +2,7 @@ import sys
 from settings import *
 from tetris import Tetris
 
+
 class Game:
     def __init__(self):
         pg.init()

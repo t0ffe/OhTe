@@ -11,7 +11,7 @@ FIELD_COLOR = (55, 55, 55)
 
 INITIAL_POSITION_OFFSET = vec(FIELD_SIZE) // 2
 
-TETROMINOES = ["I","J","L","O","S","T","Z"]
+TETROMINOES = ["I", "J", "L", "O", "S", "T", "Z"]
 
 TETROMINOE_SHAPES = [
     [(0, 0), (0, 1), (0, -1), (0, -2)],
