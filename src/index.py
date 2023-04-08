@@ -1,7 +1,6 @@
+import sys
 from settings import *
 from tetris import Tetris
-import sys
-
 
 class Game:
     def __init__(self):

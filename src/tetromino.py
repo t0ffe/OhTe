@@ -1,5 +1,5 @@
-from settings import *
 import random as ra
+from settings import *
 
 class Block(pg.sprite.Sprite):
     def __init__(self, tetromino, position):
