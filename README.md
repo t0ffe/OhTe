@@ -28,3 +28,11 @@ Testikattavuusraportin voi generoida komennolla:
 poetry run invoke coverage-report
 ```
 Testikattavuusraportin löytää _htmlcov_-hakemistosta.
+
+### Pylint
+
+Tiedoston [.pylintrc](./.pylintrc) määrittelemät tarkistukset voi suorittaa komennolla:
+
+```bash
+poetry run invoke lint
+```
