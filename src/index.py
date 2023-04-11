@@ -1,5 +1,6 @@
 import sys
-from settings import *
+import pygame as pg
+from settings import FIELD_RES, GAME_TIME, FIELD_COLOR, FPS
 from tetris import Tetris
 
 
@@ -9,12 +10,12 @@ class Game:
         pg.display.set_caption('OhTe-tris')
         self.screen = pg.display.set_mode(FIELD_RES)
         self.clock = pg.time.Clock()
+        self.user_event = pg.USEREVENT + 0
+        self.animation = False
         self.timer()
         self.tetris = Tetris(self)
 
     def timer(self):
-        self.user_event = pg.USEREVENT + 0
-        self.animation = False
         pg.time.set_timer(self.user_event, GAME_TIME)
 
     def update(self):

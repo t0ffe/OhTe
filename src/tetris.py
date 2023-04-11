@@ -1,4 +1,5 @@
-from settings import *
+import pygame as pg
+from settings import TILE_SIZE, FIELD_W, FIELD_H
 from tetromino import Tetromino
 
 
@@ -15,10 +16,10 @@ class Tetris:
             self.tetromino.move("r")
 
     def draw_grid(self):
-        for x in range(FIELD_W):
-            for y in range(FIELD_H):
-                pg.draw.rect(self.game.screen, 'black', (x * TILE_SIZE,
-                             y * TILE_SIZE, TILE_SIZE, TILE_SIZE), 1)
+        for width in range(FIELD_W):
+            for height in range(FIELD_H):
+                pg.draw.rect(self.game.screen, 'black', (width * TILE_SIZE,
+                             height * TILE_SIZE, TILE_SIZE, TILE_SIZE), 1)
 
     def update(self):
         if self.game.animation:
