@@ -10,9 +10,13 @@ class Block(pg.sprite.Sprite):
         super().__init__(tetromino.tetris.sprite_group)
         self.image = pg.Surface([TILE_SIZE, TILE_SIZE])
         self.image.fill('white')
-
         self.rect = self.image.get_rect()
+
+    def set_position(self):
         self.rect.topleft = self.position * TILE_SIZE
+
+    def update(self):
+        self.set_position()
 
 
 class Tetromino:
@@ -24,5 +28,9 @@ class Tetromino:
         self.blocks = [Block(self, position)
                        for position in TETROMINOE_SHAPES[self.shape_num]]
 
+    def move(self, direction):
+        for block in self.blocks:
+            block.position += DIRECTIONS[direction]
+
     def update(self):
-        pass
+        self.move("d")

@@ -18,6 +18,7 @@ Sovellus on klooni pelistä Tetris.
 ### Pelin valinnan jälkeen
 
 - Peli alkaa
+- Käyttäjä voi liikuttaa palikkaa **tehty**
 - Loppuu kun palikoiden pino ylittää ylärajan
     - Pelin lopuksi näet pisteet
         - voit antaa nimimerkin, jolla kirjataan ylös tulostauluun pisteet
