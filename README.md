@@ -9,6 +9,7 @@ Klooni tetris pelistä. Ohjelmistotekniikka 2023-kurssin harjoitustyö.
 - [Vaatimusmaarittely](dokumentaatio/vaatimusmaarittely.md)
 - [Tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
 - [Changelog](dokumentaatio/changelog.md)
+- [Arkkitehtuurikuvaus](dokumentaatio/arkkitehtuuri.md)
 
 ## Komentorivitoiminnot
 ### Pelin käynnistäminen
