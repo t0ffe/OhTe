@@ -7,10 +7,11 @@ FIELD_SIZE = FIELD_W, FIELD_H = 10, 20
 FIELD_RES = FIELD_W * TILE_SIZE, FIELD_H * TILE_SIZE
 
 FPS = 60
-GAME_TIME = 300
+GAME_TIME = 200
 FIELD_COLOR = (55, 55, 55)
+RANDOM_COLORS = ["orange", "cyan", "red", "blue", "yellow", "purple", "green"]
 
-INITIAL_POSITION_OFFSET = Vec(FIELD_W // 2, 0)
+INITIAL_POSITION_OFFSET = Vec(FIELD_W // 2 - 1, 0)
 DIRECTIONS = {"l": Vec(-1, 0), "r": Vec(1, 0), "d": Vec(0, 1)}
 
 TETROMINOES = ["I", "J", "L", "O", "S", "T", "Z"]

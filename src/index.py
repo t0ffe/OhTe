@@ -30,7 +30,7 @@ class Game:
     def check_events(self):
         self.animation = False
         for event in pg.event.get():
-            if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_q):
+            if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
                 pg.quit()
                 sys.exit()
             elif event.type == pg.KEYDOWN:
