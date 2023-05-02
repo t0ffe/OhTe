@@ -10,14 +10,14 @@ class Game:
         pg.display.set_caption('OhTe-tris')
         self.screen = pg.display.set_mode(FIELD_RES)
         self.clock = pg.time.Clock()
-        self.timer()
-        self.tetris = Tetris(self)
-
-    def timer(self):
         self.user_event = pg.USEREVENT + 0
         self.fast_user_event = pg.USEREVENT + 1
         self.animation = False
         self.fast_animation = False
+        self.timer()
+        self.tetris = Tetris(self)
+
+    def timer(self):
         pg.time.set_timer(self.user_event, GAME_TIME)
         pg.time.set_timer(self.fast_user_event, FAST_GAME_TIME)
 

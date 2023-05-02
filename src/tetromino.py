@@ -54,11 +54,11 @@ class Tetromino:
 
     def rotate(self, direction):
         pivot_point = self.blocks[0].position
-        blok_positions = [block.rotate(pivot_point, direction) for block in self.blocks]
+        blok_positions = [block.rotate(pivot_point, direction)
+                          for block in self.blocks]
         if not self.collision(blok_positions):
             for i, block in enumerate(self.blocks):
                 block.position = blok_positions[i]
-
 
     def collision(self, block_pos):
         return any(map(Block.collision, self.blocks, block_pos))
@@ -68,7 +68,7 @@ class Tetromino:
         blocks_future_pos = [block.position +
                              move_dir for block in self.blocks]
         collision = self.collision(blocks_future_pos)
-        
+
         if not collision:
             for block in self.blocks:
                 block.position += move_dir

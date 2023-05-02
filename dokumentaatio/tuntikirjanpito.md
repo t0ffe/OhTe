@@ -7,4 +7,5 @@
 | 02.04.-04.04. | 4h    | pelin perustoiminnallisuus ja testit |
 | 11.04. | 3h    | pelin toiminnallisuuden kasvatus ja testit |
 | 25.04. | 3h    | pelin toiminnallisuuden kasvatus |
-| yht   | 11h   | | 
+| 02.05. | 5h    | pelin toiminnallisuuden kasvatus |
+| yht   | 16h   | | 

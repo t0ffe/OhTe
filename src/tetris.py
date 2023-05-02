@@ -13,20 +13,20 @@ class Tetris:
 
     def check_full_lines(self):
         row = FIELD_H - 1
-        for y in range(FIELD_H - 1, -1, -1):
-            for x in range(FIELD_W):
-                self.array_of_gamefield[row][x] = self.array_of_gamefield[y][x]
+        for value_y in range(FIELD_H - 1, -1, -1):
+            for value_x in range(FIELD_W):
+                self.array_of_gamefield[row][value_x] = self.array_of_gamefield[value_y][value_x]
 
-                if self.array_of_gamefield[y][x]:
-                    self.array_of_gamefield[row][x].position = Vec(x, y)
+                if self.array_of_gamefield[value_y][value_x]:
+                    self.array_of_gamefield[row][value_x].position = Vec(
+                        value_x, value_y)
 
-            if sum(map(bool, self.array_of_gamefield[y])) < FIELD_W:
+            if sum(map(bool, self.array_of_gamefield[value_y])) < FIELD_W:
                 row -= 1
             else:
-                for x in range(FIELD_W):
-                    self.array_of_gamefield[row][x].cleared = True
-                    self.array_of_gamefield[row][x] = 0
-
+                for value_x in range(FIELD_W):
+                    self.array_of_gamefield[row][value_x].cleared = True
+                    self.array_of_gamefield[row][value_x] = 0
 
     def blocks_to_array(self):
         for block in self.tetromino.blocks:
@@ -52,15 +52,14 @@ class Tetris:
                 self.tetromino = Tetromino(self)
 
     def control(self, key):
-        if key == pg.K_LEFT or key == pg.K_a:
+        if key in (pg.K_LEFT, pg.K_a):
             self.tetromino.move("l")
-        elif key == pg.K_RIGHT or key == pg.K_d:
+        elif key in (pg.K_RIGHT, pg.K_d):
             self.tetromino.move("r")
-        elif key == pg.K_UP or key == pg.K_w:
+        elif key in (pg.K_UP, pg.K_w):
             self.tetromino.rotate(90)
-        elif key == pg.K_DOWN or key == pg.K_s:
+        elif key in (pg.K_DOWN, pg.K_s):
             self.faster_speed = True
-
 
     def draw_grid(self):
         for width in range(FIELD_W):
@@ -69,7 +68,8 @@ class Tetris:
                              height * TILE_SIZE, TILE_SIZE, TILE_SIZE), 1)
 
     def update(self):
-        trigger = [self.game.animation, self.game.fast_animation][self.faster_speed]
+        trigger = [self.game.animation,
+                   self.game.fast_animation][self.faster_speed]
         if trigger:
             self.check_full_lines()
             self.tetromino.update()
