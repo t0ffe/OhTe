@@ -1,5 +1,5 @@
 import pygame as pg
-from settings import TILE_SIZE, FIELD_W, FIELD_H, INITIAL_POSITION_OFFSET
+from settings import TILE_SIZE, FIELD_W, FIELD_H, INITIAL_POSITION_OFFSET, Vec
 from tetromino import Tetromino
 
 
@@ -9,6 +9,24 @@ class Tetris:
         self.sprite_group = pg.sprite.Group()
         self.tetromino = Tetromino(self)
         self.array_of_gamefield = self.make_array()
+        self.faster_speed = False
+
+    def check_full_lines(self):
+        row = FIELD_H - 1
+        for y in range(FIELD_H - 1, -1, -1):
+            for x in range(FIELD_W):
+                self.array_of_gamefield[row][x] = self.array_of_gamefield[y][x]
+
+                if self.array_of_gamefield[y][x]:
+                    self.array_of_gamefield[row][x].position = Vec(x, y)
+
+            if sum(map(bool, self.array_of_gamefield[y])) < FIELD_W:
+                row -= 1
+            else:
+                for x in range(FIELD_W):
+                    self.array_of_gamefield[row][x].cleared = True
+                    self.array_of_gamefield[row][x] = 0
+
 
     def blocks_to_array(self):
         for block in self.tetromino.blocks:
@@ -26,6 +44,7 @@ class Tetris:
 
     def tetromino_at_bottom(self):
         if self.tetromino.at_bottom:
+            self.faster_speed = False
             if self.game_over():
                 self.__init__(self.game)
             else:
@@ -33,10 +52,15 @@ class Tetris:
                 self.tetromino = Tetromino(self)
 
     def control(self, key):
-        if key == pg.K_LEFT:
+        if key == pg.K_LEFT or key == pg.K_a:
             self.tetromino.move("l")
-        elif key == pg.K_RIGHT:
+        elif key == pg.K_RIGHT or key == pg.K_d:
             self.tetromino.move("r")
+        elif key == pg.K_UP or key == pg.K_w:
+            self.tetromino.rotate(90)
+        elif key == pg.K_DOWN or key == pg.K_s:
+            self.faster_speed = True
+
 
     def draw_grid(self):
         for width in range(FIELD_W):
@@ -45,7 +69,9 @@ class Tetris:
                              height * TILE_SIZE, TILE_SIZE, TILE_SIZE), 1)
 
     def update(self):
-        if self.game.animation:
+        trigger = [self.game.animation, self.game.fast_animation][self.faster_speed]
+        if trigger:
+            self.check_full_lines()
             self.tetromino.update()
             self.tetromino_at_bottom()
         self.sprite_group.update()

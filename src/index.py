@@ -1,6 +1,6 @@
 import sys
 import pygame as pg
-from settings import FIELD_RES, GAME_TIME, FIELD_COLOR, FPS
+from settings import FIELD_RES, GAME_TIME, FAST_GAME_TIME, FIELD_COLOR, FPS
 from tetris import Tetris
 
 
@@ -10,13 +10,16 @@ class Game:
         pg.display.set_caption('OhTe-tris')
         self.screen = pg.display.set_mode(FIELD_RES)
         self.clock = pg.time.Clock()
-        self.user_event = pg.USEREVENT + 0
-        self.animation = False
         self.timer()
         self.tetris = Tetris(self)
 
     def timer(self):
+        self.user_event = pg.USEREVENT + 0
+        self.fast_user_event = pg.USEREVENT + 1
+        self.animation = False
+        self.fast_animation = False
         pg.time.set_timer(self.user_event, GAME_TIME)
+        pg.time.set_timer(self.fast_user_event, FAST_GAME_TIME)
 
     def update(self):
         self.tetris.update()
@@ -29,14 +32,17 @@ class Game:
 
     def check_events(self):
         self.animation = False
+        self.fast_animation = False
         for event in pg.event.get():
             if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
                 pg.quit()
                 sys.exit()
-            elif event.type == pg.KEYDOWN:
+            if event.type == pg.KEYDOWN:
                 self.tetris.control(event.key)
-            elif event.type == self.user_event:
+            if event.type == self.user_event:
                 self.animation = True
+            if event.type == self.fast_user_event:
+                self.fast_animation = True
 
     def run(self):
         while True:

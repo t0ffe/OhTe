@@ -8,8 +8,10 @@ FIELD_RES = FIELD_W * TILE_SIZE, FIELD_H * TILE_SIZE
 
 FPS = 60
 GAME_TIME = 200
+FAST_GAME_TIME = 5
+
 FIELD_COLOR = (55, 55, 55)
-RANDOM_COLORS = ["orange", "cyan", "red", "blue", "yellow", "purple", "green"]
+COLORS = ["cyan", "blue", "orange", "yellow", "green", "purple", "red"]
 
 INITIAL_POSITION_OFFSET = Vec(FIELD_W // 2 - 1, 0)
 DIRECTIONS = {"l": Vec(-1, 0), "r": Vec(1, 0), "d": Vec(0, 1)}
