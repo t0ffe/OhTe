@@ -4,8 +4,6 @@ from settings import FIELD_RES, GAME_TIME, FAST_GAME_TIME, FIELD_COLOR, FPS
 from tetris import Tetris
 
 
-
-
 class Game:
     """The `Game` class represents the game engine for OhTe-tris. 
 
@@ -17,10 +15,12 @@ class Game:
     - `animation`: Boolean flag to indicate if the regular game animation should be triggered.
     - `fast_animation`: Boolean flag to indicate if the fast game animation should be triggered.
     - `tetris`: The instance of the `Tetris` class representing the game mechanics.
-    
+
     Usage:
-    - Instantiate the `Game` class to start the game engine, and call the `run()` method to start the main game loop.
+    - Instantiate the `Game` class to start the game engine, and call the `run()` 
+    method to start the main game loop.
     """
+
     def __init__(self):
         pg.init()
         pg.display.set_caption('OhTe-tris')

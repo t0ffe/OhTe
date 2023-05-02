@@ -31,16 +31,19 @@ class Tetris:
     game_over()
         Checks if the game is over by checking if any blocks have reached the top of the gamefield.
     tetromino_at_bottom()
-        Checks if the current Tetromino has reached the bottom and updates the game state accordingly.
+        Checks if the current Tetromino has reached the bottom and updates the game state 
+        accordingly.
     control(key)
         Controls the movement of the current Tetromino based on the user's key input.
     draw_grid()
         Draws the grid lines of the gamefield.
     update()
-        Updates the game state by checking for completed rows, updating the current Tetromino, and handling the game over condition.
+        Updates the game state by checking for completed rows, updating the current Tetromino, 
+        and handling the game over condition.
     draw()
         Draws the gamefield grid and the current Tetromino blocks on the screen.
     """
+
     def __init__(self, game):
         """
         Initializes a Tetris object.
@@ -160,12 +163,16 @@ class Tetris:
         Updates the game state for a single frame.
 
         This method performs the following actions:
-        - If the faster speed flag is set, triggers the fast animation, otherwise triggers the normal animation.
-        - Calls the `check_full_lines` method to check if there are any full lines in the game field, and clear them.
+        - If the faster speed flag is set, triggers the fast animation, otherwise triggers the 
+        normal animation.
+        - Calls the `check_full_lines` method to check if there are any full lines in the game 
+        field, and clear them.
         - Calls the `update` method of the current tetromino, which updates its position and state.
-        - Calls the `tetromino_at_bottom` method to check if the current tetromino has reached the bottom of the game field,
-          and either starts a new tetromino or ends the game depending on whether the game is over or not.
-        - Calls the `update` method of the sprite group, which updates the positions and states of all sprites in the group.
+        - Calls the `tetromino_at_bottom` method to check if the current tetromino has reached 
+        the bottom of the game field,and either starts a new tetromino or ends the game depending
+        on whether the game is over or not.
+        - Calls the `update` method of the sprite group, which updates the positions and states 
+        of all sprites in the group.
 
         This method does not take any arguments, and does not return any values.
         """
@@ -181,10 +188,11 @@ class Tetris:
     def draw(self):
         """
         Draw the game grid and all the sprites in the sprite group onto the game screen.
-    
-        The game grid is drawn by looping through each cell of the grid and drawing a black rectangle with a white border.
+
+        The game grid is drawn by looping through each cell of the grid and drawing a black 
+        rectangle with a white border.
         The sprite group is drawn using the `draw` method of the `pygame.sprite.Group` class.
-    
+
         This method does not take any arguments and does not return anything.
         """
         self.draw_grid()

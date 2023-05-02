@@ -17,13 +17,15 @@ class Block(pg.sprite.Sprite):
         image (pygame.Surface): The image of the block.
         rect (pygame.Rect): The rectangle that encloses the block.
         cleared (bool): A flag indicating if the block has been cleared or not.
-
+        
     Methods:
         is_cleared(): Deletes the block if it is cleared.
-        rotate(pivot_point, direction): Rotates the block around a pivot point in a given direction.
+        rotate(pivot_point, direction): Rotates the block around a pivot point in a given 
+        direction.
         set_position(): Sets the position of the block on the game field.
         update(): Calls the is_cleared() and set_position() methods of the Block object.
-        collision(position): Returns True if the block collides with a block at a given position, False otherwise.
+        collision(position): Returns True if the block collides with a block at a given 
+        position, False otherwise.
     """
 
     def __init__(self, tetromino, position):
@@ -45,7 +47,7 @@ class Block(pg.sprite.Sprite):
 
         Args:
             pivot_point (Vec): The point around which the block will be rotated.
-            
+
             direction (str): The direction of rotation.
 
         Returns:
@@ -119,8 +121,8 @@ class Tetromino:
         The method takes a list of the positions of the blocks in the Tetromino object, and checks
         if any of these positions overlap with the positions of any other blocks in the game field.
         If there is a collision, the method returns True, indicating that the Tetromino cannot move
-        in the requested direction. Otherwise, the method returns False, indicating that the Tetromino
-        can move in the requested direction.
+        in the requested direction. Otherwise, the method returns False, indicating that the 
+        Tetrominocan move in the requested direction.
         """
         return any(map(Block.collision, self.blocks, block_pos))
 
@@ -129,7 +131,8 @@ class Tetromino:
         Moves the tetromino in the specified direction.
 
         Args:
-            direction (str): The direction to move the tetromino in. Valid values are 'l' (left), 'r' (right), 'd' (down).
+            direction (str): The direction to move the tetromino in. 
+            Valid values are 'l' (left), 'r' (right), 'd' (down).
         """
         move_dir = DIRECTIONS[direction]
         blocks_future_pos = [block.position +
