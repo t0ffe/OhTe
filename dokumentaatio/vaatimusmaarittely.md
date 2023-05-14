@@ -14,4 +14,4 @@ Sovellus on versio pelistä Tetris.
 - Alkaa alusta kun palikoiden pino ylittää ylärajan 
 - Pelin aikana näet
     - Pisteet
-    - Seuraavan palika
+    - Seuraavan palikan
