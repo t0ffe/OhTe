@@ -8,4 +8,6 @@
 | 11.04. | 3h    | pelin toiminnallisuuden kasvatus ja testit |
 | 25.04. | 3h    | pelin toiminnallisuuden kasvatus |
 | 02.05. | 5h    | pelin toiminnallisuuden kasvatus |
-| yht   | 16h   | | 
+| 12.05. | 5h    | final release |
+
+| yht   | 21h   | | 

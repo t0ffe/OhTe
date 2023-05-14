@@ -4,7 +4,7 @@ from settings import (
     INITIAL_POSITION_OFFSET, TILE_SIZE,
     TETROMINOES, TETROMINOE_SHAPES,
     DIRECTIONS, Vec, FIELD_W, FIELD_H,
-    COLORS
+    COLORS, NEXT_POSITION_OFFSET
 )
 
 
@@ -17,7 +17,7 @@ class Block(pg.sprite.Sprite):
         image (pygame.Surface): The image of the block.
         rect (pygame.Rect): The rectangle that encloses the block.
         cleared (bool): A flag indicating if the block has been cleared or not.
-        
+
     Methods:
         is_cleared(): Deletes the block if it is cleared.
         rotate(pivot_point, direction): Rotates the block around a pivot point in a given 
@@ -32,6 +32,7 @@ class Block(pg.sprite.Sprite):
         """Initializes a Block object with the given tetromino and position."""
         self.tetromino = tetromino
         self.position = Vec(position) + INITIAL_POSITION_OFFSET
+        self.next_position = Vec(position) + NEXT_POSITION_OFFSET
         super().__init__(tetromino.tetris.sprite_group)
         self.image = tetromino.image
         self.rect = self.image.get_rect()
@@ -59,7 +60,8 @@ class Block(pg.sprite.Sprite):
 
     def set_position(self):
         """Sets the position of the block on the game field."""
-        self.rect.topleft = self.position * TILE_SIZE
+        position = [self.next_position, self.position][self.tetromino.current]
+        self.rect.topleft = position * TILE_SIZE
 
     def update(self):
         """Calls the is_cleared() and set_position() methods of the Block object."""
@@ -83,7 +85,7 @@ class Block(pg.sprite.Sprite):
 
 
 class Tetromino:
-    def __init__(self, tetris):
+    def __init__(self, tetris, current=True):
         self.shape_num = ra.randint(0, 6)
         self.tetris = tetris
         self.image = pg.Surface([TILE_SIZE, TILE_SIZE])
@@ -92,6 +94,7 @@ class Tetromino:
         self.blocks = [Block(self, position)
                        for position in TETROMINOE_SHAPES[self.shape_num]]
         self.at_bottom = False
+        self.current = current
 
     def rotate(self, direction):
         """

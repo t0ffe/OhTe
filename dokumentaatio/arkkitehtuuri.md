@@ -15,9 +15,23 @@ classDiagram
         tetris
         clock
     }
+    class Text{
+        UI
+    }
+    class settings{
+        resolution
+        shapes
+        colors
+        positions
+    }
 
     Game --|> Tetris
     Tetris --|> Tetromino
     Tetromino --|> Block
+    Game --|> Text
+    Text  --|> settings
+    Tetris --|> settings
+    Tetromino --|> settings
+    Block --|> settings
 
 ```

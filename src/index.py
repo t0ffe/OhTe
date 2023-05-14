@@ -1,7 +1,8 @@
 import sys
 import pygame as pg
-from settings import FIELD_RES, GAME_TIME, FAST_GAME_TIME, FIELD_COLOR, FPS
+from settings import GAME_TIME, FAST_GAME_TIME, FIELD_COLOR, FPS, WIN_RES, FIELD_RES
 from tetris import Tetris
+from user_interface import Text
 
 
 class Game:
@@ -24,7 +25,7 @@ class Game:
     def __init__(self):
         pg.init()
         pg.display.set_caption('OhTe-tris')
-        self.screen = pg.display.set_mode(FIELD_RES)
+        self.screen = pg.display.set_mode(WIN_RES)
         self.clock = pg.time.Clock()
         self.user_event = pg.USEREVENT + 0
         self.fast_user_event = pg.USEREVENT + 1
@@ -32,6 +33,7 @@ class Game:
         self.fast_animation = False
         self.timer()
         self.tetris = Tetris(self)
+        self.user_interface = Text(self)
 
     def timer(self):
         pg.time.set_timer(self.user_event, GAME_TIME)
@@ -42,8 +44,10 @@ class Game:
         self.clock.tick(FPS)
 
     def draw(self):
-        self.screen.fill(color=FIELD_COLOR)
+        self.screen.fill(color=(33, 33, 33))
+        self.screen.fill(color=FIELD_COLOR, rect=(0, 0, *FIELD_RES))
         self.tetris.draw()
+        self.user_interface.draw()
         pg.display.flip()
 
     def check_events(self):

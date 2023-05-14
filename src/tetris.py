@@ -1,5 +1,5 @@
 import pygame as pg
-from settings import TILE_SIZE, FIELD_W, FIELD_H, INITIAL_POSITION_OFFSET, Vec
+from settings import TILE_SIZE, FIELD_W, FIELD_H, INITIAL_POSITION_OFFSET, Vec, POINT_PER_LINE
 from tetromino import Tetromino
 
 
@@ -56,8 +56,16 @@ class Tetris:
         self.game = game
         self.sprite_group = pg.sprite.Group()
         self.tetromino = Tetromino(self)
+        self.next_tetromino = Tetromino(self, current=False)
         self.array_of_gamefield = self.make_array()
         self.faster_speed = False
+
+        self.score = 0
+        self.full_lines = 0
+
+    def get_score(self):
+        self.score += POINT_PER_LINE[self.full_lines]
+        self.full_lines = 0
 
     def check_full_lines(self):
         """
@@ -78,6 +86,8 @@ class Tetris:
                 for value_x in range(FIELD_W):
                     self.array_of_gamefield[row][value_x].cleared = True
                     self.array_of_gamefield[row][value_x] = 0
+
+                self.full_lines += 1
 
     def blocks_to_array(self):
         """
@@ -122,7 +132,9 @@ class Tetris:
                 self.__init__(self.game)
             else:
                 self.blocks_to_array()
-                self.tetromino = Tetromino(self)
+                self.next_tetromino.current = True
+                self.tetromino = self.next_tetromino
+                self.next_tetromino = Tetromino(self, current=False)
 
     def control(self, key):
         """
@@ -183,6 +195,7 @@ class Tetris:
             self.check_full_lines()
             self.tetromino.update()
             self.tetromino_at_bottom()
+            self.get_score()
         self.sprite_group.update()
 
     def draw(self):
